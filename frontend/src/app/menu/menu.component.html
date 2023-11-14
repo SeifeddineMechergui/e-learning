@@ -1,0 +1,15 @@
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div><a href="http://localhost:4200/welcome/" class="navbar-brand">
+            E-Learning</a></div>
+
+        <ul class="navbar-nav">
+            <li><a *ngIf="basicAuthenticationService.isUserLoggedIn()" routerLink="/courses" class="nav-link">Courses</a></li>
+        </ul>
+
+        <ul class="navbar-nav navbar-collapse justify-content-end">
+                <li><a *ngIf="!basicAuthenticationService.isUserLoggedIn()" routerLink="/login" class="nav-link">Login</a></li>
+                <li><a *ngIf="basicAuthenticationService.isUserLoggedIn()" routerLink="/logout" class="nav-link">Logout</a></li>
+        </ul>
+    </nav>
+</header>

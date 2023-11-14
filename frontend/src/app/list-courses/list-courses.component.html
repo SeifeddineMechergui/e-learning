@@ -1,0 +1,39 @@
+<br> <br>
+
+<button  (click)="onAdd()" class="btn btn-success "><strong> Register Course</strong>  <i class="fa fa-plus-circle"></i></button>
+<br> <br>
+<table class="table table-responsive-sm table-hover table-outline mb-0 text-center">
+  <thead class="thead-light">
+    <tr>
+      <th class="text-center">#</th>
+      <th class="text-center">Course</th>
+      <th class="text-center">Publish Date</th>
+      <th class="text-center">Last Updated</th>
+      <th class="text-center">Total Hours</th>
+      <th class="text-center">Instructor</th>
+      <th class="text-center">Edit</th>
+      <th class="text-center">Unregister</th>
+    </tr>
+  </thead>
+  <tbody>
+        <tr *ngFor="let course of courses; let i=index">
+            <td class="text-center"><b>{{i+1}}</b></td>
+            <td class="text-center"><a [routerLink]="['/courses', course.id,{componentMode: 'viewMode'}]"><b>{{course.name}}</b></a></td>
+            <td class="text-center">{{course.publishDate}}</td>
+            <td class="text-center">{{course.lastUpdated}}</td>
+            <td class="text-center">{{course.totalHours}}</td>
+            <td class="text-center">{{course.instructor}}</td>
+            <td class="text-center">
+                <button type="button" class="edit-btn btn btn-info" (click)="onEdit(course.id)">edit
+                    <i class="fa fa-edit"></i>
+                </button>
+            </td >
+            <td class="text-center">
+              <button type="button" class="delete-btn btn btn-danger" (click)="onDelete(course.id)">unregister
+                  <i class="fa fa-trash"></i>
+              </button>
+            </td>
+            
+    </tr>
+  </tbody>
+</table>

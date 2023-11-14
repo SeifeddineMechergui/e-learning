@@ -1,0 +1,39 @@
+<div class="app-body">
+    
+    <div class="main d-flex align-items-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 mx-auto">
+            <div class="card-group">
+              <div class="card p-4">
+                <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}}</div>
+                <div class="card-body">
+                    <h1 style="text-align: center">Login</h1>
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                         <span class="input-group-text"><i class="icon-user"></i></span>
+                      </div>
+                      <input type="text" class="form-control" placeholder="username" autocomplete="username" required [(ngModel)]="username">
+                    </div>
+                    <div class="input-group mb-4">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="icon-lock"></i></span>
+                      </div>
+                      <input type="password" class="form-control" placeholder="password" autocomplete="current-password" required [(ngModel)]="password">
+                    </div>
+                    <div style="text-align: center;">
+                        <button style="width: 20%" type="button" class="btn btn-primary" (click)="handleBasicAuthLogin()">login</button>
+                    </div>
+                    <div style="text-align: right">
+                        <a [routerLink]="['/register']"><b>Register</b></a>
+                    </div>
+                </div>
+              </div>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
